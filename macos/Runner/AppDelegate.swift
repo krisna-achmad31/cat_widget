@@ -1,0 +1,26 @@
+import Cocoa
+import FlutterMacOS
+import flutter_inappwebview_macos
+
+extension InAppWebView {
+    @objc public override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        
+        if window != nil {
+            self.setValue(false, forKey: "opaque")
+            self.setValue(false, forKey: "drawsBackground")
+            self.layer?.backgroundColor = NSColor.clear.cgColor
+        }
+    }
+}
+
+@main
+class AppDelegate: FlutterAppDelegate {
+  override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+    return false
+  }
+
+  override func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
+    return true
+  }
+}

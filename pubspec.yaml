@@ -1,0 +1,27 @@
+name: couple_assistant
+description: "A cute 3D cat couple assistant for macOS and Windows."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_3d_controller: ^2.3.0
+  window_manager: ^0.6.0
+  google_fonts: ^9.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/
+    - assets/models/orange_cat_walking.glb
+    - assets/models/bicolor_cat.glb
